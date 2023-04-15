@@ -1,0 +1,70 @@
+<br><br><br><br><br><br>
+<section class="related-product-area section_gap_bottom">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-lg-6 text-center">
+					<div class="section-title">
+						<h1>SHOP PRODUCTS </h1>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+							labore et dolore
+							magna aliqua.</p>
+					</div>
+				</div>
+			</div>
+
+			<section>
+    <div class="untree_co-section product-section before-footer-section">
+		    <div class="container">
+                <br><br>
+                {{!-- <h1>Shop according to category</h1> --}}
+                <br><br>
+		      	<div class="row">
+                    {{#each category}}
+		      		<!-- Start Column 1 -->
+					<div class="col-12 col-md-4 col-lg-3 mb-5">
+						<a class="product-item text-decoration-none " href="/viewproducts?categoryid={{this._id}}">
+							<h3 class="product-title">{{this.name}}</h3>
+						</a>
+					</div> 
+					<!-- End Column 1 -->
+                    {{/each}}
+
+		      	</div>
+		    </div>
+		</div>
+</section>
+<div class="row">
+					<!-- single product -->
+					{{#each product}}
+					<div class="col-lg-3 col-md-6">
+						<div class="single-product">
+							<a href="/product-view?id={{this._id}}"><img class="img-fluid"
+									src="/productImages/{{this.image.[0]}}" alt=""></a>
+							<div class="product-details">
+								<h6>{{this.name}}</h6>
+								<div class="price">
+									<h6>${{this.price}}</h6>
+									<h6 class="l-through">$210.00</h6>
+								</div>
+								<div class="prd-bottom">
+
+									<a href="addtocart?id={{this._id}}" class="social-info">
+										<span><i class="fa-solid fa-cart-shopping"></i></span>
+										<p class="hover-text">add to bag</p>
+									</a>
+									<a href="" class="social-info">
+										<span><i class="fa-solid fa-heart"></i></span>
+										<p class="hover-text">Wishlist</p>
+									</a>
+									<a href="" class="social-info">
+										<span class="lnr lnr-move"></span>
+										<p class="hover-text">view more</p>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					{{/each}}
+		</div>
+		</div>
+	</section>

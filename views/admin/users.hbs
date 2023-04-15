@@ -1,0 +1,79 @@
+<section class="h-100 h-custom">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-lg-12">
+
+        <div class="card card-registration card-registration-2" style="border-radius: 15px;">
+          <div class="card-body p-0">
+            <div class="row g-0">
+              <div class="col-lg-12">
+                <div class="p-3">
+                  <div class="container-fluid">
+                    <div class="sub-container thehome">
+                      <div>
+                        <center>
+                          <h1 class="thenewarrival">User Management</h1>
+                        </center>
+                        <div class="theArea">
+                          <table class="table" id="list_users"  style="border-radius: 25px;">
+                            <thead>
+                              <tr>
+                                <th scope="col">Name</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Mobile</th>
+                                <th scope="col">Action</th>
+                                <th scope="col">Verification</th>
+                                <th>Status</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              {{#each users}}
+                              <tr>
+                                <td>{{this.name}}</td>
+                                <td>{{this.email}}</td>
+                                <td>{{this.mobile}}</td>
+
+                                <td>
+                                  {{#if this.blocked}}
+                                  <a href="/admin/unblock-user?id={{this._id}}" style="border-radius:5px;  background-color:#d95151; border-radius: 5px;  color: #fff;"class="btn w-100">Unblock</a>
+                                  {{else}}
+                                  <a href="/admin/block-user?id={{this._id}}" style="border-radius:5px;  background-color:#51c5d9; border-radius: 5px;  color: #fff;" class="btn  w-100">Block</a>
+                                  {{/if}}
+                                </td>
+                                <td>
+                                  {{#if is_verified}}
+                                  <p class="text-white">verified</p>
+                                  {{else }}
+                                  <p class="text-white">not verified</p>
+                                  {{/if}}
+                                </td>
+                                <td>
+                                  {{#if blocked}}
+                                  <p class="text-white">Blocked</p>
+                                  {{else}}
+                                  <p class="text-white">not blocked</p>
+                                  {{/if}}
+                                </td>
+
+                              </tr>
+                              {{/each}}
+                            </tbody>
+                          </table>
+                          <!-- Button trigger modal -->
+                          
+
+                          <!-- Modal -->
+                          
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <script>
+                    $(document).ready(function () {
+                      $('#list_users').DataTable();
+                    });
+                  </script>
+                  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+                  <script>(type = 'text/javascript', charset = 'utf8', src = 'https://cdn.datatables.net/1.13.1/js/jquery.dataTables.js')</script>
+
+                </div></div></div></div></div></div></div></div></section>
